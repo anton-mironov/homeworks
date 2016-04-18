@@ -2,26 +2,53 @@ package com.company;
 
 public class Homework3Ex1Var2 {
     public static void main(String[] args) {
-        double n = 543.21;
-        int bigN = (int) (n/0.01);
 
-        int first = bigN/10000;
-        int digit = bigN - first*10000;
+        Calculator calc1 = new Calculator();
+        calc1.setN(987.65);
+        int s1 = calc1.calcN();
+        print(s1, calc1.getN());
 
-        int second = digit/1000;
-        digit = digit - second*1000;
+        Calculator calc2 = new Calculator();
+        calc2.setN(543.21);
+        int s2 = calc2.calcN();
+        print(s2, calc2.getN());
+    }
 
-        int third = digit/100;
-        digit = digit - third*100;
+    private static void print(int s, double val) {
+        System.out.println("\n" + "Сумма цифр для числа " + val + " равна " + s);
+    }
+}
 
-        int fourth = digit/10;
-        digit = digit - fourth*10;
+class CalculatorStr {
+    double n;
 
-        int fifth = digit%10;
+    public void setN(double n) {
+        this.n = n;
+    }
 
-        System.out.print("Набор цифр: "+ first + ", "+ second + ", " + third + ", " + fourth + ", " + fifth + ".");
+    public double getN() {
+        return n;
+    }
 
-        int summ = first + second + third + fourth + fifth;
-        System.out.println("\n" + "Сумма цифр для числа " + n + " равна " + summ);
+    int calcN() {
+        double newN = n;
+        String stringN = String.valueOf(newN).replace(".", "");
+
+        String str1 = String.valueOf(stringN.charAt(0));
+        String str2 = String.valueOf(stringN.charAt(1));
+        String str3 = String.valueOf(stringN.charAt(2));
+        String str4 = String.valueOf(stringN.charAt(3));
+        String str5 = String.valueOf(stringN.charAt(4));
+
+        int x1 = Integer.parseInt(str1);
+        int x2 = Integer.parseInt(str2);
+        int x3 = Integer.parseInt(str3);
+        int x4 = Integer.parseInt(str4);
+        int x5 = Integer.parseInt(str5);
+
+        int summ = x1 + x2 + x3 + x4 + x5;
+        System.out.print("Набор цифр: " + x1 + ", " + x2 + ", " + x3 + ", " + x4 + ", " + x5 + ".");
+
+        return summ;
     }
 }
