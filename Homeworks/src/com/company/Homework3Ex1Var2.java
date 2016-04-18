@@ -3,12 +3,12 @@ package com.company;
 public class Homework3Ex1Var2 {
     public static void main(String[] args) {
 
-        Calculator calc1 = new Calculator();
+        CalculatorStr calc1 = new CalculatorStr();
         calc1.setN(987.65);
         int s1 = calc1.calcN();
         print(s1, calc1.getN());
 
-        Calculator calc2 = new Calculator();
+        CalculatorStr calc2 = new CalculatorStr();
         calc2.setN(543.21);
         int s2 = calc2.calcN();
         print(s2, calc2.getN());
