@@ -26,7 +26,7 @@ public class Homework4Ex2 {
         int x8 = Integer.parseInt(str8);
 
         int summ = x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8;
-        System.out.print("Формула: " + x1 + " + " + x2 + " + " + x3 + " + " + x4 + " + " + x5 + " + " + x6 + " + " + 7 + " + " + 8 + " = " + summ + ".");
+        System.out.println("Формула: " + x1 + " + " + x2 + " + " + x3 + " + " + x4 + " + " + x5 + " + " + x6 + " + " + 7 + " + " + 8 + " = " + summ + ".");
 
 
     }
