@@ -57,7 +57,7 @@ class CalculatorMath {
     public int[] mathMinMax(int arr[]) {
         int[] arrayMinMax = new int[2];
         arrayMinMax[0] = (Math.min((Math.min((Math.min(arr[0], arr[1])), (Math.min(arr[2], arr[3])))), arr[4]));
-        arrayMinMax[1] = (Math.min((Math.max((Math.max(arr[0], arr[1])), (Math.max(arr[2], arr[3])))), arr[4]));
+        arrayMinMax[1] = (Math.max((Math.max((Math.max(arr[0], arr[1])), (Math.max(arr[2], arr[3])))), arr[4]));
 
         return arrayMinMax;
     }
