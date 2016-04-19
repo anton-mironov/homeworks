@@ -5,14 +5,14 @@ public class Homework3Ex2Var1 {
 
         CalculatorMinMax calc1 = new CalculatorMinMax();
         calc1.setN(987.65);
-        int min1 = calc1.calcN();    // написать так, чтоб изымало только первый элемент массива. Но для этого оно должно возвращать массивный тип!
-        int max1 = calc1.calcN();    // написать так, чтоб изымало только второй элемент массива
+        int min1 = calc1.calcN()[0];
+        int max1 = calc1.calcN()[4];
         print(min1, max1, calc1.getN());
 
         CalculatorMinMax calc2 = new CalculatorMinMax();
         calc2.setN(543.21);
-        int min2 = calc2.calcN();   // написать так, чтоб изымало только первый элемент массива
-        int max2 = calc2.calcN();   // написать так, чтоб изымало только второй элемент массива
+        int min2 = calc2.calcN()[0];
+        int max2 = calc2.calcN()[4];
         print(min2, max2, calc2.getN());
     }
 
@@ -33,7 +33,7 @@ class CalculatorMinMax {
         return n;
     }
 
-    int [] calcN(){
+    public int[] calcN() {
         double newN = n;
         String stringN = String.valueOf(newN).replace(".", "");
 
@@ -49,21 +49,21 @@ class CalculatorMinMax {
         int x4 = Integer.parseInt(str4);
         int x5 = Integer.parseInt(str5);
 
-        int sort [] = {x1, x2, x3, x4, x5}; // этот массив нужно как-то передать на сортирову ниже...
+        int sort[] = {x1, x2, x3, x4, x5};
 
-        /*void bubbleSort(int sort[]) {
-            for (int i = 0; i < sort.length - 1; i++) {
-                for (int j = 0; j < sort.length - i - 1; j++) {
-                    if (sort[j] > sort[j + 1]) {
-                        int t = sort[j];
-                        sort[j] = sort[j + 1];
-                        sort[j + 1] = t;
-                    }
+        return bubbleSort(sort);
+    }
+
+    public int[] bubbleSort(int sort[]) {
+        for (int i = 0; i < 5 - 1; i++) {
+            for (int j = 0; j < 5 - i - 1; j++) {
+                if (sort[j] > sort[j + 1]) {
+                    int t = sort[j];
+                    sort[j] = sort[j + 1];
+                    sort[j + 1] = t;
                 }
             }
-        }*/
-
-        int arrMinMax [] = {sort[0], sort[4]};
-        return arrMinMax;
+        }
+        return sort;
     }
 }
