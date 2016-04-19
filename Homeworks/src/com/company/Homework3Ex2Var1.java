@@ -5,14 +5,14 @@ public class Homework3Ex2Var1 {
 
         CalculatorMinMax calc1 = new CalculatorMinMax();
         calc1.setN(987.65);
-        int min1 = calc1.calcN();
-        int max1 = calc1.calcN(); // написать другое
+        int min1 = calc1.calcN();    // написать так, чтоб изымало только первый элемент массива. Но для этого оно должно возвращать массивный тип!
+        int max1 = calc1.calcN();    // написать так, чтоб изымало только второй элемент массива
         print(min1, max1, calc1.getN());
 
         CalculatorMinMax calc2 = new CalculatorMinMax();
         calc2.setN(543.21);
-        int min2 = calc2.calcN();
-        int max2 = calc2.calcN(); // написать другое
+        int min2 = calc2.calcN();   // написать так, чтоб изымало только первый элемент массива
+        int max2 = calc2.calcN();   // написать так, чтоб изымало только второй элемент массива
         print(min2, max2, calc2.getN());
     }
 
