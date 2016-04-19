@@ -18,7 +18,7 @@ public class Homework3Ex2Var1 {
 
     private static void print(int min, int max, double val) {
         System.out.println("\n" + "Минимум из цифр в числе " + val + " равен " + min);
-        System.out.println(" Максимум из цифр в числе " + val + " равен " + max);
+        System.out.println("Максимум из цифр в числе " + val + " равен " + max);
     }
 }
 
