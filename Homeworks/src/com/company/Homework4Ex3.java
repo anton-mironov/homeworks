@@ -1,16 +1,16 @@
 package com.company;
 
 public class Homework4Ex3 {
-    public static void main(String[] args) {
+    public static void exercise4_3() {
         int salary = 5555;
         if (salary > 0 && salary < 1000) {
-            System.out.println("критически малый доход");
+            System.out.println("Зарплата в " + salary + " грн - это критически малый доход");
         } else if (salary < 5000) {
-            System.out.println("средний доход");
+            System.out.println("Зарплата в " + salary + " грн - это средний доход");
         } else if (salary < 100000) {
-            System.out.println("высокий доход");
+            System.out.println("Зарплата в " + salary + " грн - это высокий доход");
         } else {
-            System.out.println("миллионер");
+            System.out.println("Если Ваша зарплата составляет " + salary + " грн, то Вы миллионер!");
         }
     }
 }
