@@ -49,7 +49,7 @@ class CalculatorMinMax {
         int x4 = Integer.parseInt(str4);
         int x5 = Integer.parseInt(str5);
 
-        int sort [] = {x1, x2, x3, x4, x5};
+        int sort [] = {x1, x2, x3, x4, x5}; // этот массив нужно как-то передать на сортирову ниже...
 
         /*void bubbleSort(int sort[]) {
             for (int i = 0; i < sort.length - 1; i++) {
