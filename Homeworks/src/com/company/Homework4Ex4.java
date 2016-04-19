@@ -7,7 +7,7 @@ public class Homework4Ex4 {
         System.out.println("Выберете любое задание и введите его номер.");
         System.out.println("Задание 1. Собрать в одну сроку...");
         System.out.println("Задание 2. Преобразовать число в формулу...");
-        System.out.println("Задание 3. Вычислить...");
+        System.out.println("Задание 3. Вычислить уровень доходов...");
 
         Scanner scanner = new Scanner(System.in);
 
