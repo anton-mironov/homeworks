@@ -1,4 +1,4 @@
-package com.HWs;
+package com.company;
 
 import java.util.*;
 
