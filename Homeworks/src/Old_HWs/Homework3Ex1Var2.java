@@ -1,4 +1,4 @@
-package com.company;
+package Old_HWs;
 
 public class Homework3Ex1Var2 {
     public static void main(String[] args) {

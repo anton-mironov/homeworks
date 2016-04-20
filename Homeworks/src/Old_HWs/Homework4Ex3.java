@@ -1,4 +1,4 @@
-package com.company;
+package Old_HWs;
 
 public class Homework4Ex3 {
     public static void exercise4_3() {
