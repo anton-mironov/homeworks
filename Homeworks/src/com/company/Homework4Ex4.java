@@ -5,7 +5,7 @@ import java.util.*;
 public class Homework4Ex4 {
     public static void main(String[] args) {
         System.out.println("Выберете любое задание и введите его номер.");
-        System.out.println("Задание 1. Собрать в одну сроку...");
+        System.out.println("Задание 1. Вывести в трёх строках...");
         System.out.println("Задание 2. Преобразовать число в формулу...");
         System.out.println("Задание 3. Отобразить уровень доходов...");
 
