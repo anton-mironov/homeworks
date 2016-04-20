@@ -5,6 +5,6 @@ public class Homework4Ex1 {
         String a = "One";
         String b = "Two";
         String c = "Three";
-        System.out.println(a + ", " + b + ", " + c + ".");
+        System.out.println(a + ", \n" + b + ", \n" + c + ".");
     }
 }
