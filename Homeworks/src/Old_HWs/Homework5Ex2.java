@@ -1,4 +1,4 @@
-package New_HWs;
+package Old_HWs;
 
 public class Homework5Ex2 {
     public static void main(String[] args) {

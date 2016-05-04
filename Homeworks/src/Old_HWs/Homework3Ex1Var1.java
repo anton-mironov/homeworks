@@ -18,6 +18,7 @@ public class Homework3Ex1Var1 {
         System.out.println("\n" + "Сумма цифр для числа " + val + " равна " + s);
     }
 }
+
 class Calculator {
     double n;
 
