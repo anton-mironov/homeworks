@@ -2,7 +2,7 @@ package New_HWs.Animals;
 
 import New_HWs.Animals.Animal;
 
-public abstract class Herbivorous extends Animal {
+public abstract class Herbivorous extends Animal implements Food {
 
     abstract String getBreed();
 
@@ -12,11 +12,11 @@ public abstract class Herbivorous extends Animal {
 
     @Override
     String getType() {
-        return this.getClass().getTypeName();
+        return this.getClass().getName();
     }
 
     @Override
-    String eat() {
-        return "I'm eating grass only";
+    void eat(Food food) {
+        System.out.println(food.grass);
     }
 }

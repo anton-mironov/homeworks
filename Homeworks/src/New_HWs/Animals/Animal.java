@@ -6,9 +6,10 @@ public abstract class Animal {
     protected double weight;
     protected boolean dom;
 
+
     abstract String getType();
 
-    abstract String eat();                 // must be overriden!!!
+    abstract void eat(Food food);
 
     abstract void animalSound();
 
@@ -24,3 +25,8 @@ public abstract class Animal {
         this.age = a;
     }
 }
+
+interface Food {
+    String grass = "grass";
+    String meat = "meat";
+   }
