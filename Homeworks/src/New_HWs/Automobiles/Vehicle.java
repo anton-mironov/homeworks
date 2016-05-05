@@ -2,12 +2,12 @@ package New_HWs.Automobiles;
 
 public interface Vehicle {
 
-    double height = 0;
-    double length = 0;
-    double width = 0;
+    double height = 1;
+    double length = 1;
+    double width = 1;
 
-    int weight = 0;
-    double power = 0;
+    int weight = 100;
+    double power = 20;
 
     int getNumberOfWheels();
 

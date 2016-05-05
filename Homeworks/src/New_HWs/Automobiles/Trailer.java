@@ -13,6 +13,11 @@ public class Trailer implements Cargo {
     }
 
     @Override
+    public boolean isAutonomous() {
+        return false;
+    }
+
+    @Override
     public boolean isDiesel() {
         return false;
     }

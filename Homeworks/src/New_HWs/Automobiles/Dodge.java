@@ -16,6 +16,4 @@ public class Dodge extends MonsterTruck {
 
     String model = "Super";
     String tiresVendor = "Shimano";
-
-
 }

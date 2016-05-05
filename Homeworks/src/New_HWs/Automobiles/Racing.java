@@ -2,6 +2,6 @@ package New_HWs.Automobiles;
 
 public interface Racing extends Vehicle {
 
-    double maxSpeed = 0;
+    double maxSpeed = 10;
 
 }
