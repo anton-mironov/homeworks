@@ -16,7 +16,10 @@ public abstract class Herbivorous extends Animal implements Food {
     }
 
     @Override
-    void eat(Food food) {
+    final void eat(Food food) {
         System.out.println(food.grass);
+        if (food instanceof Animal) {
+            System.out.println("Can't eat another animals");
+        }
     }
 }
