@@ -1,8 +1,6 @@
-package New_HWs.Automobiles;
+package Old_HWs.Automobiles;
 
-public class Jeep extends Track implements Rally, Truck {
-
-    int enduranceLevel = 5;
+public class MonsterTruck extends Track implements Rally, Truck, Individual {
 
     @Override
     public String getType() {
@@ -11,7 +9,7 @@ public class Jeep extends Track implements Rally, Truck {
 
     @Override
     public boolean isDiesel() {
-        return false;
+        return true;
     }
 
     @Override

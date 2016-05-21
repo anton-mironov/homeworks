@@ -1,4 +1,4 @@
-package New_HWs.Animals;
+package Old_HWs.Animals;
 
 public abstract class Animal {
 

@@ -1,12 +1,10 @@
-package New_HWs.Automobiles;
+package Old_HWs.Automobiles;
 
-public class Track implements Racing {
-
-    String tiresVendor;
+public class Trailer implements Cargo {
 
     @Override
     public int getNumberOfWheels() {
-        return 4;
+        return 6;
     }
 
     @Override
@@ -14,6 +12,12 @@ public class Track implements Racing {
         return this.getClass().getSimpleName();
     }
 
+    @Override
+    public boolean isAutonomous() {
+        return false;
+    }
+
+    @Override
     public boolean isDiesel() {
         return false;
     }

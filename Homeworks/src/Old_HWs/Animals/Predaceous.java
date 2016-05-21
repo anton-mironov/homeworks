@@ -1,6 +1,4 @@
-package New_HWs.Animals;
-
-import New_HWs.Animals.Animal;
+package Old_HWs.Animals;
 
 public abstract class Predaceous extends Animal {
 

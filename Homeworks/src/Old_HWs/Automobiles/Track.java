@@ -1,6 +1,8 @@
-package New_HWs.Automobiles;
+package Old_HWs.Automobiles;
 
-public class Pickup implements Truck, Individual {
+public class Track implements Racing {
+
+    String tiresVendor;
 
     @Override
     public int getNumberOfWheels() {
@@ -12,13 +14,7 @@ public class Pickup implements Truck, Individual {
         return this.getClass().getSimpleName();
     }
 
-    @Override
     public boolean isDiesel() {
-        return true;
-    }
-
-    @Override
-    public boolean isAutonomous() {
-        return true;
+        return false;
     }
 }

@@ -1,6 +1,11 @@
-package New_HWs.Automobiles;
+package Old_HWs.Automobiles;
 
-public class MonsterTruck extends Track implements Rally, Truck, Individual {
+public class Pickup implements Truck, Individual {
+
+    @Override
+    public int getNumberOfWheels() {
+        return 4;
+    }
 
     @Override
     public String getType() {

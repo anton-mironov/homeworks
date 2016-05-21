@@ -1,4 +1,4 @@
-package New_HWs.Automobiles;
+package Old_HWs.Automobiles;
 
 public class Bus extends Trailer implements Communal {
 
