@@ -2,6 +2,7 @@ package New_HWs.Practice10ForHW.impl;
 
 public class Service implements New_HWs.Practice10ForHW.api.Service {
     private Country[] countries;
+    private String[] states = {"","",""};
 
     public Service(Country[] countries) {
         this.countries = countries;
@@ -12,7 +13,7 @@ public class Service implements New_HWs.Practice10ForHW.api.Service {
         for (Country country : countries)
             if (country.getName().equals(name))
                 return country.getPopulation();
-        return 0l;
+        return 0L;
     }
 
     @Override
@@ -35,7 +36,7 @@ public class Service implements New_HWs.Practice10ForHW.api.Service {
     public Double getAverageDensityOfPeopleByStates(String name) {
         for (Country country : countries)
             if (country.getName().equals(name))
-                return (country.getPopulation() / country.getSquare())/countries.length;
+                return (country.getPopulation() / country.getSquare())/states.length;
         return 0d;
     }
 
