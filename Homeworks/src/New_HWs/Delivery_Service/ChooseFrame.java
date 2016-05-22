@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class ChooseFrame extends JFrame {
 
-    public ChooseFrame() {
+    public ChooseFrame(int inputWeight) {
 
         super("Starting and destination points");
 
@@ -16,14 +16,12 @@ public class ChooseFrame extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-
         Font font = new Font("", Font.BOLD, 16);
 
         String[] cities = {"Kharkiv", "Kyiv", "Madrid", "New-York", "Deli", "Cairo", "Tokyo", "Havana", "Capetown", "Sydney"};
-        String[] tTypes = {"Sea", "Ground", "Air", "Combo"};
+        TransportType[] tTypes = {TransportType.GROUND, TransportType.AIR, TransportType.SEA, TransportType.COMBO};
 
         Container content = getContentPane();
-
         content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
 
         final JLabel label = new JLabel("Select start and destination points");
@@ -31,58 +29,53 @@ public class ChooseFrame extends JFrame {
         label.setFont(font);
         content.add(label);
 
-        final String[] item1 = new String[1];
-        final String[] item2 = new String[1];
-        final String[] item3 = new String[1];
+        final String[] chosenCity1 = {"Kharkiv"};
+        final String[] chosenCity2 = {"Kharkiv"};
+        final TransportType[] defaultTransportType = new TransportType[]{TransportType.GROUND};
 
         ActionListener actionListener1 = e1 -> {
             JComboBox box1 = (JComboBox) e1.getSource();
-            item1[0] = (String) box1.getSelectedItem();
-            label.setText(item1[0] + " -- " + item2[0] + " through " + item3[0]);
+            chosenCity1[0] = (String) box1.getSelectedItem();
+            label.setText(chosenCity1[0] + " -- " + chosenCity2[0] + " through " + defaultTransportType[0]);
+            setupTransportDetails(inputWeight, defaultTransportType[0], chosenCity1[0], chosenCity2[0]);
         };
 
         ActionListener actionListener2 = e2 -> {
             JComboBox box2 = (JComboBox) e2.getSource();
-            item2[0] = (String) box2.getSelectedItem();
-            label.setText(item1[0] + " -- " + item2[0] + " through " + item3[0]);
+            chosenCity2[0] = (String) box2.getSelectedItem();
+            label.setText(chosenCity1[0] + " -- " + chosenCity2[0] + " through " + defaultTransportType[0]);
+            setupTransportDetails(inputWeight, defaultTransportType[0], chosenCity1[0], chosenCity2[0]);
+        };
+
+        ActionListener actionListener3 = e3 -> {
+            JComboBox box3 = (JComboBox) e3.getSource();
+            defaultTransportType[0] = (TransportType) box3.getSelectedItem();
+            label.setText(chosenCity1[0] + " -- " + chosenCity2[0] + " through " + defaultTransportType[0]);
+            setupTransportDetails(inputWeight, defaultTransportType[0], chosenCity1[0], chosenCity2[0]);
         };
 
         JComboBox comboBox1 = new JComboBox(cities);
         comboBox1.setFont(font);
         comboBox1.setAlignmentX(LEFT_ALIGNMENT);
         comboBox1.addActionListener(actionListener1);
-        String chosenCity1 = (String) comboBox1.getSelectedItem();
         content.add(comboBox1);
 
         JComboBox comboBox2 = new JComboBox(cities);
         comboBox2.setFont(font);
         comboBox2.setAlignmentX(LEFT_ALIGNMENT);
         comboBox2.addActionListener(actionListener2);
-        String chosenCity2 = (String) comboBox2.getSelectedItem();
         content.add(comboBox2);
-
-        ActionListener actionListener3 = e3 -> {
-            JComboBox box3 = (JComboBox) e3.getSource();
-            item3[0] = (String) box3.getSelectedItem();
-            label.setText(item1[0] + " -- " + item2[0] + " through " + item3[0]);
-        };
 
         JComboBox comboBox3 = new JComboBox(tTypes);
         comboBox3.setFont(font);
         comboBox3.setAlignmentX(LEFT_ALIGNMENT);
         comboBox3.addActionListener(actionListener3);
-        String chosenTrType = (String) comboBox2.getSelectedItem();
         content.add(comboBox3);
+    }
 
-
-        double s = TransportDetails.calcDistances(chosenCity1, chosenCity2);
-        System.out.println("Details = " + s);
-
-//        JComboBox ComboBox3 = new JComboBox(cities);
-//        ComboBox3.setAlignmentX(LEFT_ALIGNMENT);
-//        ComboBox3.setFont(font);
-//        ComboBox3.addActionListener(actionListener);
-//        content.add(ComboBox3);
-
+    private void setupTransportDetails(int inputWeight, TransportType chosenTransportType, String chosenCity1, String chosenCity2) {
+        TransportDetails transportDetails = new TransportDetails();
+        transportDetails.setWeight(inputWeight);
+        System.out.println("\nFrom " + chosenCity1 + " to " + chosenCity2 + " through " + chosenTransportType + " transport.\n" + transportDetails.transportationParameters(chosenTransportType, chosenCity1, chosenCity2));
     }
 }

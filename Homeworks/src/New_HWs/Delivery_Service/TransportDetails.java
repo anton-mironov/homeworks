@@ -5,15 +5,14 @@ public class TransportDetails {
     private int price;                                        //per mile
     public double cost;                                    //depending on weight
     private int duration;                                  //in days
-    public double distance;
     private int numberOfIntermediatePoints;
 
     public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public String transportationParameters(TransportType tType) {
-        switch (tType) {
+    public String transportationParameters(TransportType chosenTransportType, String chosenCity1, String chosenCity2) {
+        switch (chosenTransportType) {
             case SEA:
                 price = 12;
                 duration = 10;
@@ -33,7 +32,6 @@ public class TransportDetails {
                 duration = 1;
                 numberOfIntermediatePoints = 3;
                 cost = calcCost();
-
                 break;
 
             case COMBO:
@@ -43,8 +41,7 @@ public class TransportDetails {
                 cost = calcCost();
                 break;
         }
-        //distance = calcDistances(String chosenCity1, String chosenCity2);
-        return ("Total cost = $" + cost /* distance*/ + ".\nNumber of intermediate points = " + numberOfIntermediatePoints + ".\nDuration = " + duration + " day(s).");
+        return ("Total cost = $" + cost * calcDistances(chosenCity1, chosenCity2) + ".\nNumber of intermediate points = " + numberOfIntermediatePoints + ".\nDuration = " + duration + " day(s).");
     }
 
     private double calcCost() {
@@ -62,12 +59,13 @@ public class TransportDetails {
         return cost;
     }
 
-    public static double calcDistances(String chosenCity1, String chosenCity2) {
+    private double calcDistances(String chosenCity1, String chosenCity2) {
         double distance = 0;
+        String error = "\nPlease, select another city because now actual distance is 0.0 kms.";
         if (chosenCity1 == "Kharkiv") {
             switch (chosenCity2) {
                 case "Kharkiv":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Kyiv":
                     distance = 410;
@@ -103,7 +101,7 @@ public class TransportDetails {
                     distance = 410;
                     break;
                 case "Kyiv":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Madrid":
                     distance = 2862;
@@ -139,7 +137,7 @@ public class TransportDetails {
                     distance = 2862;
                     break;
                 case "Madrid":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "New-York":
                     distance = 5767;
@@ -175,7 +173,7 @@ public class TransportDetails {
                     distance = 5767;
                     break;
                 case "New-York":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Deli":
                     distance = 11752;
@@ -211,7 +209,7 @@ public class TransportDetails {
                     distance = 11752;
                     break;
                 case "Deli":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Cairo":
                     distance = 4428;
@@ -247,7 +245,7 @@ public class TransportDetails {
                     distance = 4428;
                     break;
                 case "Cairo":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Tokyo":
                     distance = 9561;
@@ -283,7 +281,7 @@ public class TransportDetails {
                     distance = 9561;
                     break;
                 case "Tokyo":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Havana":
                     distance = 12118;
@@ -319,7 +317,7 @@ public class TransportDetails {
                     distance = 12118;
                     break;
                 case "Havana":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Capetown":
                     distance = 12368;
@@ -355,7 +353,7 @@ public class TransportDetails {
                     distance = 12368;
                     break;
                 case "Capetown":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
                 case "Sydney":
                     distance = 11011;
@@ -391,10 +389,9 @@ public class TransportDetails {
                     distance = 11011;
                     break;
                 case "Sydney":
-                    System.out.println("Please, select another city");
+                    System.out.println(error);
                     break;
             }
-            System.out.println("distance = " + distance);
         }
         return distance;
     }

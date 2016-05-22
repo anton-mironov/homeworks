@@ -9,15 +9,7 @@ public class Main {
 
         javax.swing.SwingUtilities.invokeLater(() -> {
             JFrame.setDefaultLookAndFeelDecorated(true);
-            new ChooseFrame();
+            new ChooseFrame(Integer.parseInt(inputWeight));
         });
-
-        TransportDetails transportDetails = new TransportDetails();
-        transportDetails.setWeight(Integer.parseInt(inputWeight));
-
-        System.out.println("SEA:\n" + transportDetails.transportationParameters(TransportType.SEA));
-        System.out.println("\nAIR:\n" + transportDetails.transportationParameters(TransportType.AIR));
-        System.out.println("\nGROUND:\n" + transportDetails.transportationParameters(TransportType.GROUND));
-        System.out.println("\nCOMBO:\n" + transportDetails.transportationParameters(TransportType.COMBO) + "\n");
     }
 }
