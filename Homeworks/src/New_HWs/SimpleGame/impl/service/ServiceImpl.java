@@ -84,12 +84,6 @@ public class ServiceImpl implements Service {
         this.gameplay.iterResult();
     }
 
-
-    @Override
-    public BasicCharacter getPlayerCharacter() {
-        return this.playerCharacter;
-    }
-
     @Override
     public BasicMonster[] getMonster() {
         return this.monsters;
