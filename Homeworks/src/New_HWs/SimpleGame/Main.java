@@ -10,7 +10,7 @@ public class Main {
         Service gameService = new ServiceImpl();
 
         for (int i = 1; i <= 5; i++) {
-            System.out.println("----------- Iteration " + i + " -----------");
+            System.out.println("\t\t\t\t\t\tIteration " + i);
             gameService.nextIteration();
         }
     }
