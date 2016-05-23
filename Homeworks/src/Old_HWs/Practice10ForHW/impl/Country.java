@@ -1,6 +1,6 @@
-package New_HWs.Practice10ForHW.impl;
+package Old_HWs.Practice10ForHW.impl;
 
-public class Country implements New_HWs.Practice10ForHW.api.Country {
+public class Country implements Old_HWs.Practice10ForHW.api.Country {
     private String name;
     private State[] states;
     private Long population = 0l;

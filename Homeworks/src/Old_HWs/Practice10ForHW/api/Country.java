@@ -1,4 +1,4 @@
-package New_HWs.Practice10ForHW.api;
+package Old_HWs.Practice10ForHW.api;
 
 public interface Country {
 

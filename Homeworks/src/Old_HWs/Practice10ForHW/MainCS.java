@@ -1,6 +1,6 @@
-package New_HWs.Practice10ForHW;
+package Old_HWs.Practice10ForHW;
 
-import New_HWs.Practice10ForHW.impl.*;
+import Old_HWs.Practice10ForHW.impl.*;
 
 public class MainCS {
     public static void main(String[] args) {

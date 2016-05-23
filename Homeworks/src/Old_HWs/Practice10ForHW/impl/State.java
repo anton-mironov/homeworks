@@ -1,7 +1,7 @@
-package New_HWs.Practice10ForHW.impl;
+package Old_HWs.Practice10ForHW.impl;
 
 
-public class State implements New_HWs.Practice10ForHW.api.State {
+public class State implements Old_HWs.Practice10ForHW.api.State {
 
     private long population;
     private Double square;
