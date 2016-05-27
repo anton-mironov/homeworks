@@ -24,7 +24,7 @@ public class MyArrayWrapper<AW extends Number> {
     public void remove(AW digit) {
 
         for (int i = 0; i < array.length; i++) {
-            if (digit == array[i]) {
+            if (digit.equals(array[i])) {
                 System.arraycopy(array, i + 1, array, i, (array.length - (i + 1)));
             }
         }
