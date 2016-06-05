@@ -1,6 +1,6 @@
-package New_HWs.SimpleGame.api.characters.features;
+package Old_HWs.SimpleGame.api.characters.features;
 
-import New_HWs.SimpleGame.api.characters.BasicCharacter;
+import Old_HWs.SimpleGame.api.characters.BasicCharacter;
 
 public interface BasicMonster extends BasicCharacter {
 

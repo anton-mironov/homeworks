@@ -1,7 +1,7 @@
-package New_HWs.SimpleGame.impl.characters.attacks;
+package Old_HWs.SimpleGame.impl.characters.attacks;
 
-import New_HWs.SimpleGame.api.characters.*;
-import New_HWs.SimpleGame.api.characters.BasicCharacter;
+import Old_HWs.SimpleGame.api.characters.*;
+import Old_HWs.SimpleGame.api.characters.BasicCharacter;
 
 public abstract class BasicAttack implements BasicCharacterAction {
 

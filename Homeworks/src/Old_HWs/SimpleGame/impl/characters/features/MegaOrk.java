@@ -1,9 +1,9 @@
-package New_HWs.SimpleGame.impl.characters.features;
+package Old_HWs.SimpleGame.impl.characters.features;
 
-import New_HWs.SimpleGame.api.characters.*;
-import New_HWs.SimpleGame.api.characters.features.Flying;
-import New_HWs.SimpleGame.api.characters.features.Jumping;
-import New_HWs.SimpleGame.impl.characters.attacks.StrongAttack;
+import Old_HWs.SimpleGame.api.characters.*;
+import Old_HWs.SimpleGame.api.characters.features.Flying;
+import Old_HWs.SimpleGame.api.characters.features.Jumping;
+import Old_HWs.SimpleGame.impl.characters.attacks.StrongAttack;
 
 public class MegaOrk extends Ork implements Jumping, Flying{
 

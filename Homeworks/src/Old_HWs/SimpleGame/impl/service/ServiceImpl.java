@@ -1,15 +1,15 @@
-package New_HWs.SimpleGame.impl.service;
+package Old_HWs.SimpleGame.impl.service;
 
-import New_HWs.SimpleGame.api.characters.features.Moving;
-import New_HWs.SimpleGame.api.service.Service;
-import New_HWs.SimpleGame.api.characters.BasicCharacter;
-import New_HWs.SimpleGame.api.characters.features.BasicMonster;
-import New_HWs.SimpleGame.impl.characters.features.BigOrk;
-import New_HWs.SimpleGame.impl.characters.features.MegaOrk;
-import New_HWs.SimpleGame.impl.characters.features.Ork;
-import New_HWs.SimpleGame.impl.characters.player.Guerrilla;
-import New_HWs.SimpleGame.impl.characters.player.Soldier;
-import New_HWs.SimpleGame.impl.characters.player.SuperSoldier;
+import Old_HWs.SimpleGame.api.characters.features.Moving;
+import Old_HWs.SimpleGame.api.service.Service;
+import Old_HWs.SimpleGame.api.characters.BasicCharacter;
+import Old_HWs.SimpleGame.api.characters.features.BasicMonster;
+import Old_HWs.SimpleGame.impl.characters.features.BigOrk;
+import Old_HWs.SimpleGame.impl.characters.features.MegaOrk;
+import Old_HWs.SimpleGame.impl.characters.features.Ork;
+import Old_HWs.SimpleGame.impl.characters.player.Guerrilla;
+import Old_HWs.SimpleGame.impl.characters.player.Soldier;
+import Old_HWs.SimpleGame.impl.characters.player.SuperSoldier;
 
 import java.awt.*;
 import java.util.Random;

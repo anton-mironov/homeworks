@@ -1,8 +1,8 @@
-package New_HWs.SimpleGame.impl.characters.features;
+package Old_HWs.SimpleGame.impl.characters.features;
 
-import New_HWs.SimpleGame.api.characters.*;
-import New_HWs.SimpleGame.api.characters.features.Moving;
-import New_HWs.SimpleGame.impl.characters.attacks.PunchAttack;
+import Old_HWs.SimpleGame.api.characters.*;
+import Old_HWs.SimpleGame.api.characters.features.Moving;
+import Old_HWs.SimpleGame.impl.characters.attacks.PunchAttack;
 
 public class Ork extends BasicMonster implements Moving{
 

@@ -1,7 +1,7 @@
-package New_HWs.SimpleGame;
+package Old_HWs.SimpleGame;
 
-import New_HWs.SimpleGame.api.service.Service;
-import New_HWs.SimpleGame.impl.service.ServiceImpl;
+import Old_HWs.SimpleGame.api.service.Service;
+import Old_HWs.SimpleGame.impl.service.ServiceImpl;
 
 public class Main {
 
