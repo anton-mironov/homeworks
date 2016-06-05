@@ -26,7 +26,7 @@ public class Homework4Ex4 {
                     Homework4Ex3.exercise4_3();
                     break;
                 default:
-                    System.out.println("Введите корректное число");
+                    System.out.println("Введите корректное число ");
                     break;
             }
         }
