@@ -25,12 +25,10 @@ public class Two_sets {
         System.out.println("Initial blocked cars" + blockedCars);
         System.out.println("Initial selected cars" + selectedCars);
 
-        if (blockedCars.removeAll(selectedCars)) {
-            System.out.println("\nRemoved blocked cars" + blockedCars);
-        }
+        blockedCars.removeAll(selectedCars);
+        selectedCars.removeAll(blockedCars2);
 
-        if (selectedCars.removeAll(blockedCars2)) {
-            System.out.println("Removed selected cars" + selectedCars);
-        }
+        System.out.println("\nRemoved blocked cars" + blockedCars);
+        System.out.println("Removed selected cars" + selectedCars);
     }
 }
