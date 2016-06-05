@@ -1,4 +1,4 @@
-package Old_HWs.SimpleGame.api.characters.features;
+package New_HWs.SimpleGame.api.characters.features;
 
 import java.awt.*;
 

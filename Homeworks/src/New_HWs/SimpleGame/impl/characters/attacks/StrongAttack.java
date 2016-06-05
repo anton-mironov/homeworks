@@ -1,7 +1,7 @@
-package Old_HWs.SimpleGame.impl.characters.attacks;
+package New_HWs.SimpleGame.impl.characters.attacks;
 
-import Old_HWs.SimpleGame.api.characters.BasicCharacter;
-import Old_HWs.SimpleGame.api.characters.AttackingType;
+import New_HWs.SimpleGame.api.characters.BasicCharacter;
+import New_HWs.SimpleGame.api.characters.AttackingType;
 
 public class StrongAttack extends BasicAttack{
 

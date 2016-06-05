@@ -1,9 +1,9 @@
-package Old_HWs.SimpleGame.impl.characters;
+package New_HWs.SimpleGame.impl.characters;
 
-import Old_HWs.SimpleGame.api.characters.BasicCharacterAction;
-import Old_HWs.SimpleGame.api.characters.features.*;
+import New_HWs.SimpleGame.api.characters.BasicCharacterAction;
+import New_HWs.SimpleGame.api.characters.features.*;
 
-public class BasicCharacter implements Old_HWs.SimpleGame.api.characters.BasicCharacter {
+public class BasicCharacter implements New_HWs.SimpleGame.api.characters.BasicCharacter {
     private double health;
     public int power;
 

@@ -1,12 +1,12 @@
-package Old_HWs.SimpleGame.impl.characters.features;
+package New_HWs.SimpleGame.impl.characters.features;
 
-import Old_HWs.SimpleGame.api.characters.*;
-import Old_HWs.SimpleGame.api.characters.features.*;
-import Old_HWs.SimpleGame.impl.characters.BasicCharacter;
+import New_HWs.SimpleGame.api.characters.*;
+import New_HWs.SimpleGame.api.characters.features.*;
+import New_HWs.SimpleGame.impl.characters.BasicCharacter;
 
 import java.awt.*;
 
-public abstract class BasicMonster extends BasicCharacter implements Moving, Old_HWs.SimpleGame.api.characters.features.BasicMonster {
+public abstract class BasicMonster extends BasicCharacter implements Moving, New_HWs.SimpleGame.api.characters.features.BasicMonster {
 
     protected int power;
     private int moveDistance;
@@ -34,11 +34,11 @@ public abstract class BasicMonster extends BasicCharacter implements Moving, Old
         return true;
     }
 
-    public final void attack(Old_HWs.SimpleGame.api.characters.BasicCharacter character) {
+    public final void attack(New_HWs.SimpleGame.api.characters.BasicCharacter character) {
         getAttack(character).doAction();
     }
 
-    protected abstract BasicCharacterAction getAttack(Old_HWs.SimpleGame.api.characters.BasicCharacter character);
+    protected abstract BasicCharacterAction getAttack(New_HWs.SimpleGame.api.characters.BasicCharacter character);
 
     public final void moveToPosition(Point point) {
         this.coordinates = point;

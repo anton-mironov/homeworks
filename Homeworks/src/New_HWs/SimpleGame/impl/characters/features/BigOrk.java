@@ -1,8 +1,8 @@
-package Old_HWs.SimpleGame.impl.characters.features;
+package New_HWs.SimpleGame.impl.characters.features;
 
-import Old_HWs.SimpleGame.api.characters.*;
-import Old_HWs.SimpleGame.api.characters.features.Jumping;
-import Old_HWs.SimpleGame.impl.characters.attacks.MediumAttack;
+import New_HWs.SimpleGame.api.characters.*;
+import New_HWs.SimpleGame.api.characters.features.Jumping;
+import New_HWs.SimpleGame.impl.characters.attacks.MediumAttack;
 
 
 public class BigOrk extends Ork implements Jumping{

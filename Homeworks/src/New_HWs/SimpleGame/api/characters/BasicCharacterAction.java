@@ -1,4 +1,4 @@
-package Old_HWs.SimpleGame.api.characters;
+package New_HWs.SimpleGame.api.characters;
 
 public interface BasicCharacterAction {
     void doAction();
