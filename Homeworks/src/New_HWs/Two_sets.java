@@ -1,4 +1,4 @@
-package New_HWs.Collections;
+package New_HWs;
 
 import java.util.HashSet;
 import java.util.Set;
