@@ -1,7 +1,6 @@
 package New_HWs;
 
 import java.util.HashSet;
-import java.util.Set;
 
 public class Two_sets {
     public static void main(String[] args) {
