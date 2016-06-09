@@ -1,4 +1,4 @@
-package New_HWs;
+package New_HWs.WriteReadFile;
 
 import java.io.*;
 
