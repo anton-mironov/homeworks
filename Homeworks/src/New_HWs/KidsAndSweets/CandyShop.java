@@ -2,24 +2,35 @@ package New_HWs.KidsAndSweets;
 
 public class CandyShop {
 
-    public static Sweet getSweet(SweetType type) {
-        switch (type) {
-            case CANDY:
-                return new Candy("lollipop", "chocolate");
-            case ICECREAM:
-                return new IceCream("ice-cream", "vanilla");
-        }
-        return null;
-    }
+    public void purchase(Kid kid) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                synchronized (kid) {
+                    Sweet sweet;
 
-    public static Sweet makeSweet(Sweet sweet) {
-        Sweet purchase = null;
-        if (sweet instanceof Candy) {
-            purchase = new Candy("caramel", "fruit");
-        } else if (sweet instanceof IceCream) {
-            purchase = new IceCream("ice-cream", "pistachio");
-        }
-        return purchase;
-    }
+                    if (kid.getSex() == 0) {
+                        if (kid.getPreference() == 0) {
+                            sweet = new Candy("lollipop", "vanilla");
+                        } else {
+                            sweet = new Candy("caramel", "fruit");
+                        }
+                    } else {
+                        if (kid.getPreference() == 0) {
+                            sweet = new IceCream("plombyro", "chocolate");
+                        } else {
+                            sweet = new IceCream("ice-cream", "pistachio");
+                        }
+                    }
+                    kid.setLocalSweet(sweet);
 
+                    try {
+                        Thread.sleep(200);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+    }
 }

@@ -3,42 +3,34 @@ package New_HWs.KidsAndSweets;
 public class Main {
     public static void main(String[] args) {
 
-        Kid kid1 = new Kid();
-        Kid kid2 = new Kid();
-        Kid kid3 = new Kid();
-        Kid kid4 = new Kid();
+        Kid kid1 = new Kid("Ann", 0, 0);
+        Kid kid2 = new Kid("Alex", 1, 1);
+        Kid kid3 = new Kid("Betty", 0, 1);
+        Kid kid4 = new Kid("Jack", 1, 0);
 
-        kid1.name = "Ann";
-        kid2.name = "Alex";
-        kid3.name = "Betty";
-        kid4.name = "Jack";
-
-        Sweet sweet1, sweet2, sweet3, sweet4;
-
-        sweet1 = CandyShop.getSweet(SweetType.CANDY);
-        sweet2 = CandyShop.getSweet(SweetType.ICECREAM);
-
-        sweet3 = CandyShop.makeSweet(sweet1);
-        sweet4 = CandyShop.makeSweet(sweet2);
+        Kid[] kids = new Kid[]{kid1, kid2, kid3, kid4};
 
         System.out.println("Feeding kids:");
+        for (Kid kid : kids) {
+            new CandyShop().purchase(kid);
+        }
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        kid1.eatSweet(sweet1);
-        kid2.eatSweet(sweet2);
-        kid3.eatSweet(sweet3);
-        kid4.eatSweet(sweet4);
+        for (Kid kid : kids) {
+            System.out.println(kid.toString());
+        }
 
         System.out.println("\nChanging food in pairs:");
-
         Changer changer = new Changer();
-        changer.change(kid1, kid2, sweet1, sweet2);
-        changer.change(kid3, kid4, sweet3, sweet4);
+        changer.change(kid1, kid2);
+        changer.change(kid3, kid4);
 
-        System.out.println("\nMixed food exchange:");
-        changer.change(kid1, kid3, sweet2, sweet4);
-        changer.change(kid3, kid2, sweet4, sweet1);
-        changer.change(kid1, kid4, sweet2, sweet3);
-        changer.change(kid3, kid1, sweet4, sweet2);
-
+        System.out.println("\nChanging food in chain:");
+        Changer chainChanger = new Changer();
+        chainChanger.change(kids);
     }
 }
