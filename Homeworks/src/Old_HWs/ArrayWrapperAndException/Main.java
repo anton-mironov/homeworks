@@ -51,7 +51,7 @@ public class Main {
         } catch (NumberFormatException numFormEx) {
             System.out.println("\nCall to MyArrayException:");
             MyArrayException.method1(ex, numFormEx);
-            System.out.println("Back to Main.");
+            System.out.println("Back to WriteReadFileVar1.");
         }
 
         try {
