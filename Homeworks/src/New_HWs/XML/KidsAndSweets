@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Kids>
+    <Kid>
+        <kidName>Ann</kidName>
+        <localSweet>
+            <taste>vanilla</taste>
+            <sweetName>lollipop</sweetName>
+        </localSweet>
+        <sex>0</sex>
+        <preference>0</preference>
+    </Kid>
+
+    <Kid>
+        <kidName>Alex</kidName>
+        <localSweet>
+            <taste>pistachio</taste>
+            <sweetName>ice-cream</sweetName>
+        </localSweet>
+        <sex>1</sex>
+        <preference>1</preference>
+    </Kid>
+
+    <Kid>
+        <kidName>Betty</kidName>
+        <localSweet>
+            <taste>fruit</taste>
+            <sweetName>caramel</sweetName>
+
+        </localSweet>
+        <sex>0</sex>
+        <preference>1</preference>
+    </Kid>
+
+    <Kid>
+        <kidName>Jack</kidName>
+        <localSweet>
+            <taste>chocolate</taste>
+            <sweetName>plombyro</sweetName>
+        </localSweet>
+        <sex>1</sex>
+        <preference>0</preference>
+    </Kid>
+</Kids>
