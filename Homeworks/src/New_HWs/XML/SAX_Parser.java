@@ -1,59 +1,51 @@
 package New_HWs.XML;
 
 import java.io.File;
+import java.io.IOException;
 import javax.xml.parsers.*;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class SAX_Parser {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
-        try {
-            File inputFile = new File("D:\\Java\\Git (repository)\\homeworks\\Homeworks\\src\\New_HWs\\XML\\KidsAndSweets.txt");
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser saxParser = factory.newSAXParser();
-            UserHandler userhandler = new UserHandler();
-            System.out.println("Extracting information about kids and sweets using SAX:");
-            saxParser.parse(inputFile, userhandler);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        File inputFile = new File("D:\\Java\\Git (repository)\\homeworks\\Homeworks\\src\\New_HWs\\XML\\KidsAndSweets.txt");
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser saxParser = factory.newSAXParser();
+        UserHandler userhandler = new UserHandler();
+        System.out.println("Extracting information about kids and sweets using SAX:");
+        saxParser.parse(inputFile, userhandler);
     }
 
     private static class UserHandler extends DefaultHandler {
 
         boolean bKidName = false;
-        boolean bSweetTaste = false;
         boolean bSex = false;
         boolean bPreference = false;
+        boolean bSweetTaste = false;
         boolean bSweetName = false;
 
-        @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             switch (qName) {
-                case "Kid":
-
-                    break;
                 case "kidName":
                     bKidName = true;
-
                     break;
-                case "taste":
-                    bSweetTaste = true;
 
-                    break;
-                case "sweetName":
-                    bSweetName = true;
-
-                    break;
                 case "sex":
                     bSex = true;
-
                     break;
+
                 case "preference":
                     bPreference = true;
+                    break;
+
+                case "taste":
+                    bSweetTaste = true;
+                    break;
+
+                case "sweetName":
+                    bSweetName = true;
                     break;
             }
         }
@@ -68,7 +60,7 @@ public class SAX_Parser {
                 bSweetTaste = false;
 
             } else if (bSweetName) {
-                System.out.println(" " + new String(ch, start, length) + ".");
+                System.out.print(" " + new String(ch, start, length) + ". ");
                 bSweetName = false;
 
             } else if (bSex) {
