@@ -22,21 +22,18 @@ public class DOM_Parser {
 
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
-                    System.out.print("\nName of this kid is " + eElement.getElementsByTagName("kidName").item(0)
-                            .getTextContent() + ". ");
+                    System.out.print("\nName of this kid is " + eElement.getElementsByTagName("kidName").item(0).getTextContent() + ". ");
                     if (eElement.getElementsByTagName("sex").item(0).getTextContent().equals("0")) {
-                        System.out.println("It's a girl.");
+                        System.out.print("It's a girl and she prefers ");
                     } else {
-                        System.out.println("It's a boy.");
+                        System.out.print("It's a boy and she prefers ");
                     }
                     if (eElement.getElementsByTagName("preference").item(0).getTextContent().equals("0")) {
-                        System.out.print("This kid prefers candies ");
+                        System.out.print("candies ");
                     } else {
-                        System.out.print("This kid prefers ice-cream ");
+                        System.out.print("ice-cream ");
                     }
-                    System.out.println("so now eating " + eElement.getElementsByTagName("taste").item(0)
-                            .getTextContent() + " " + eElement.getElementsByTagName("sweetName").item(0).getTextContent
-                            () + ".");
+                    System.out.println("so now eating " + eElement.getElementsByTagName("taste").item(0).getTextContent() + " " + eElement.getElementsByTagName("sweetName").item(0).getTextContent() + ".");
                 }
             }
         } catch (Exception e) {

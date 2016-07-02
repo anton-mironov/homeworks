@@ -71,18 +71,18 @@ public class SAX_Parser {
             } else if (bSex) {
                 String localSex = new String(ch, start, length);
                 if (localSex.equals("0")) {
-                    System.out.print("It's a girl ");
+                    System.out.print("It's a girl and she prefers ");
                 } else {
-                    System.out.print("It's a boy ");
+                    System.out.print("It's a boy and he prefers ");
                 }
                 bSex = false;
 
             } else if (bPreference) {
                 String localPreference = new String(ch, start, length);
                 if (localPreference.equals("0")) {
-                    System.out.println("and always prefers candies.");
+                    System.out.println("candies.");
                 } else {
-                    System.out.println("and always prefers ice-cream.");
+                    System.out.println("ice-cream.");
                 }
                 bPreference = false;
             }
