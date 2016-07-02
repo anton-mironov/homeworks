@@ -32,7 +32,7 @@ public class SAX_Parser {
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-            if (qName.equalsIgnoreCase("Kid")) {
+            if (qName.equals("Kid")) {
 
             } else if (qName.equals("kidName")) {
                 bKidName = true;
