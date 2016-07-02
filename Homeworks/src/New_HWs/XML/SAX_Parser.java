@@ -14,7 +14,7 @@ public class SAX_Parser {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             UserHandler userhandler = new UserHandler();
-            System.out.println("Information about kids and sweets:");
+            System.out.println("Extracting information about kids and sweets using SAX:");
             saxParser.parse(inputFile, userhandler);
 
         } catch (Exception e) {
@@ -32,32 +32,35 @@ public class SAX_Parser {
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-            if (qName.equals("Kid")) {
+            switch (qName) {
+                case "Kid":
 
-            } else if (qName.equals("kidName")) {
-                bKidName = true;
+                    break;
+                case "kidName":
+                    bKidName = true;
 
-            } else if (qName.equals("taste")) {
-                bSweetTaste = true;
+                    break;
+                case "taste":
+                    bSweetTaste = true;
 
-            } else if (qName.equals("sweetName")) {
-                bSweetName = true;
+                    break;
+                case "sweetName":
+                    bSweetName = true;
 
-            } else if (qName.equals("sex")) {
-                bSex = true;
+                    break;
+                case "sex":
+                    bSex = true;
 
-            } else if (qName.equals("preference")) {
-                bPreference = true;
-
-            } else if (qName.equals("sweetName")) {
-                bSweetName = true;
+                    break;
+                case "preference":
+                    bPreference = true;
+                    break;
             }
-
         }
 
         public void characters(char ch[], int start, int length) throws SAXException {
             if (bKidName) {
-                System.out.print("\n"+new String(ch, start, length));
+                System.out.print("\n" + new String(ch, start, length));
                 bKidName = false;
 
             } else if (bSweetTaste) {

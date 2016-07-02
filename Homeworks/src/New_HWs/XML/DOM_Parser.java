@@ -16,7 +16,7 @@ public class DOM_Parser {
             doc.getDocumentElement().normalize();
 
             NodeList nList = doc.getElementsByTagName("Kid");
-            System.out.println("Information about kids and sweets:");
+            System.out.println("Extracting information about kids and sweets using DOM:");
             for (int temp = 0; temp < nList.getLength(); temp++) {
                 Node nNode = nList.item(temp);
 
