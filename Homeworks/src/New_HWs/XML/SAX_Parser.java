@@ -22,7 +22,7 @@ public class SAX_Parser {
         }
     }
 
-    static class UserHandler extends DefaultHandler {
+    private static class UserHandler extends DefaultHandler {
 
         boolean bKidName = false;
         boolean bSweetTaste = false;
