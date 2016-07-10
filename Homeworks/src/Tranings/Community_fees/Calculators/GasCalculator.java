@@ -1,18 +1,11 @@
 package Tranings.Community_fees.Calculators;
 
+import Tranings.Community_fees.Tariffs;
+
 public class GasCalculator {
-    private double gasTariff;
+    private double gasTariff = Tariffs.gasTariff;
 
     public double calcGasPayment(int gasDiff) {
-        double gasPayment = gasDiff * gasTariff;
-        return gasPayment;
-    }
-
-    public double getGasTariff() {
-        return gasTariff;
-    }
-
-    public void setGasTariff(double gasTariff) {
-        this.gasTariff = gasTariff;
+        return gasDiff * gasTariff;
     }
 }
