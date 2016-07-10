@@ -1,9 +1,14 @@
-package Tranings.Community_fees.Windows;
+package Community_fees.Windows;
 
-import Tranings.Community_fees.Calculators.*;
+import Community_fees.Calculators.*;
+import Community_fees.Windows.Exceptions.AllExceptionWindow;
+import Community_fees.Windows.Exceptions.NothingToSaveExceptionWindow;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.*;
+import java.text.DateFormat;
+import java.util.Date;
 
 public class MainWindow {
     private TextField elInit, elCurr, gasInit, gasCurr, waterInit, waterCurr, hotWaterInit, hotWaterCurr, mntTextField, heatTextField;
@@ -16,8 +21,6 @@ public class MainWindow {
     private Label mntDiff = new Label(" Not calculated ");
     private Label heatDiff = new Label(" Not calculated ");
 
-    private JLabel hotWaterLab = new JLabel("Hot water: ");
-    private JLabel heatLab = new JLabel("Heating:                             ");
     private JLabel status = new JLabel("Waiting for inputs");
 
     public MainWindow() {
@@ -28,20 +31,22 @@ public class MainWindow {
         jfrm.setLocationRelativeTo(null);
         jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        String empty = null;
+
         elInit = new TextField(6);
-        elInit.setText(String.valueOf(0));
+        elInit.setText(empty);
         elCurr = new TextField(6);
-        elCurr.setText(String.valueOf(0));
+        elCurr.setText(empty);
 
         gasInit = new TextField(6);
-        gasInit.setText(String.valueOf(0));
+        gasInit.setText(empty);
         gasCurr = new TextField(6);
-        gasCurr.setText(String.valueOf(0));
+        gasCurr.setText(empty);
 
         waterInit = new TextField(6);
-        waterInit.setText(String.valueOf(0));
+        waterInit.setText(empty);
         waterCurr = new TextField(6);
-        waterCurr.setText(String.valueOf(0));
+        waterCurr.setText(empty);
 
         hotWaterInit = new TextField(6);
         hotWaterInit.setText(String.valueOf(0));
@@ -49,14 +54,14 @@ public class MainWindow {
         hotWaterCurr.setText(String.valueOf(0));
 
         mntTextField = new TextField(6);
-        mntTextField.setText(String.valueOf(0));
+        mntTextField.setText(empty);
 
         heatTextField = new TextField(6);
         heatTextField.setText(String.valueOf(0));
 
         Button jbtnSetTariffs = new Button("Tariffs");
         JButton jbtnCalculate = new JButton("Calculate all services");
-        JButton jbtnSaveToFile = new JButton("Save this bill as textfile");
+        JButton jbtnSaveToFile = new JButton("Save this bill on desktop");
 
         jbtnSetTariffs.addActionListener(e -> {
             javax.swing.SwingUtilities.invokeLater(TariffsWindow::new);
@@ -65,15 +70,15 @@ public class MainWindow {
         jbtnCalculate.addActionListener(e -> {
             try {
                 calculateButton();
-            } catch (Exception ex) {
-                javax.swing.SwingUtilities.invokeLater(ExceptionWindow::new);
+            } catch (NumberFormatException nFex) {
+                javax.swing.SwingUtilities.invokeLater(AllExceptionWindow::new);
             }
             status.setText("Calculated.");
         });
 
         jbtnSaveToFile.addActionListener(e -> {
             saveToFile();
-            status.setText("Your information saved.");
+            status.setText("Results of calculations saved.");
         });
 
 
@@ -105,6 +110,7 @@ public class MainWindow {
         JCheckBox chboxIsUseHotWater = new JCheckBox(" Enable calculations for hot water supply (now OFF) ");
         jfrm.add(chboxIsUseHotWater);
 
+        JLabel hotWaterLab = new JLabel("Hot water: ");
         jfrm.add(hotWaterLab);
         jfrm.add(hotWaterInit);
         jfrm.add(hotWaterCurr);
@@ -128,6 +134,8 @@ public class MainWindow {
                 hotWaterInit.setVisible(false);
                 hotWaterCurr.setVisible(false);
                 hotWaterDiff.setVisible(false);
+                hotWaterInit.setText(String.valueOf(0));
+                hotWaterCurr.setText(String.valueOf(0));
             }
         });
 
@@ -144,6 +152,7 @@ public class MainWindow {
         JCheckBox chboxIsHeatingSeason = new JCheckBox(" Enable calculations for heating season (now OFF) ");
         jfrm.add(chboxIsHeatingSeason);
 
+        JLabel heatLab = new JLabel("Heating:                             ");
         jfrm.add(heatLab);
         jfrm.add(heatTextField);
         jfrm.add(heatDiff);
@@ -163,24 +172,46 @@ public class MainWindow {
                 heatLab.setVisible(false);
                 heatTextField.setVisible(false);
                 heatDiff.setVisible(false);
+                heatTextField.setText(String.valueOf(0));
             }
         });
 
         jfrm.add(jbtnCalculate);
         jfrm.add(jbtnSaveToFile);
+
         jfrm.add(status);
 
-        result = new TextArea((" Results of calculations will be here "), 7, 40);
-
+        result = new TextArea(("\n\n\n              Results of calculations will be here "), 8, 40);
         jfrm.add(result);
+
         jfrm.setVisible(true);
     }
 
     private void saveToFile() {
-        // do nothing
+        Date dateAndTime = new Date();
+        DateFormat dateFormat = DateFormat.getDateInstance();
+        String fullTime = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(dateAndTime);
+        String fullDate = dateFormat.format(dateAndTime);
+
+        String fileName = "C:\\Users\\" + System.getProperty("user.name") + "\\Desktop\\Community fees bill (" + fullDate + ").txt";
+        File file = new File(fileName);
+        PrintWriter input = null;
+
+        try {
+            input = new PrintWriter(file);
+        } catch (FileNotFoundException e) {
+            status.setText("Something went wrong...");
+        }
+
+        try {
+            input.write("This file was created at " + fullTime + ", " + fullDate + "\n\n" + calculateButton());
+        } catch (Exception ex) {
+            javax.swing.SwingUtilities.invokeLater(NothingToSaveExceptionWindow::new);
+        }
+        input.close();
     }
 
-    private void calculateButton() {
+    private String calculateButton() {
         int el = extractor(elInit, elCurr);
         int gas = extractor(gasInit, gasCurr);
         int wat = extractor(waterInit, waterCurr);
@@ -189,8 +220,8 @@ public class MainWindow {
         double heat = extractor(heatTextField);
 
         elDiff.setText("            " + el + "            ");
-        gasDiff.setText("             " + gas + "            ");
-        waterDiff.setText("               " + wat + "          ");
+        gasDiff.setText("            " + gas + "            ");
+        waterDiff.setText("            " + wat + "            ");
         hotWaterDiff.setText("               " + hotWat + "          ");
         mntDiff.setText("          " + mnt + " UAH   ");
         heatDiff.setText("          " + heat + " UAH   ");
@@ -198,6 +229,7 @@ public class MainWindow {
         TotalCalculator totalCalc = new TotalCalculator();
         String totalBill = totalCalc.createTotalBill(el, gas, wat, hotWat, heat, mnt);
         result.setText(String.valueOf(totalBill));
+        return totalBill;
     }
 
     private int extractor(TextField textField1, TextField textField2) {

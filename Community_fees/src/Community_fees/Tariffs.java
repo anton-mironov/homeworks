@@ -1,4 +1,4 @@
-package Tranings.Community_fees;
+package Community_fees;
 
 public class Tariffs {
 

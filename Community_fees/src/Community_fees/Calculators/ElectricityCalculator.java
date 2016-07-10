@@ -1,6 +1,6 @@
-package Tranings.Community_fees.Calculators;
+package Community_fees.Calculators;
 
-import Tranings.Community_fees.Tariffs;
+import Community_fees.Tariffs;
 
 public class ElectricityCalculator {
 

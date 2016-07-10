@@ -1,6 +1,7 @@
-package Tranings.Community_fees.Windows;
+package Community_fees.Windows;
 
-import Tranings.Community_fees.Tariffs;
+import Community_fees.Tariffs;
+import Community_fees.Windows.Exceptions.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +44,7 @@ class TariffsWindow {
                 Tariffs.setNewTariffs(elNormNewTar.getText(), el100NewTar.getText(), el600NewTar.getText(), gasNewTar.getText(), waterNewTar.getText(), hotWaterNewTar.getText(), sanitationNewTar.getText());
                 setupAllValues();
             } catch (Exception exc) {
-                javax.swing.SwingUtilities.invokeLater(ExceptionWindow::new);
+                javax.swing.SwingUtilities.invokeLater(DotsAndDigitsExceptionWindow::new);
             }
             status.setText("Your changes will be used in next calculation.");
         });

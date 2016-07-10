@@ -1,4 +1,4 @@
-package Tranings.Community_fees.Calculators;
+package Community_fees.Calculators;
 
 public class HeatingCalculator {
 
