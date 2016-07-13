@@ -67,30 +67,3 @@ public class DB_connecting_IDE {
         }
     }
 }
-
-
-//    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-//        String driverName = "com.mysql.jdbc.Driver";
-//        Class.forName(driverName);
-//        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/traffic_police", "Антон", "mironov01");
-//        System.out.println(connection.getCatalog());
-//
-//        Statement st = connection.createStatement();
-//        String query = "SELECT id FROM car";
-//
-//        if (false) {
-//            query += "id = 1";
-//        }
-//        if (false) {
-//            query += "id = 45";
-//        }
-//        if (false) {
-//            query += "id = 3";
-//        }
-//
-//        ResultSet rs = st.executeQuery(query);
-//        rs.next();
-//        System.out.println(rs.getFetchSize());
-//        rs.updateInt(1, 34);
-//        rs.updateRow();
-//    }
