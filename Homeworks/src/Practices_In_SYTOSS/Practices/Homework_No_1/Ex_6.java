@@ -18,5 +18,7 @@ public class Ex_6 {
         } else {
             System.out.println("i + j = " + (i + j));
         }
+
+        scanner.close();
     }
 }
