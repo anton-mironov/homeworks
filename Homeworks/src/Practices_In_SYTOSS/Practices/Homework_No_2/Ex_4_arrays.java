@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class Ex_4_arrays {
     public static void main(String[] args) {
-
         int array[] = new int[]{5, 3, 4, 2, 1};
         System.out.println("Initial array: " + Arrays.toString(array));
         sortArray(array);
