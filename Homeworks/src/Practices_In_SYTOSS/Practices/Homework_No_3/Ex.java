@@ -13,10 +13,11 @@ public class Ex {
         do {
             Integer i = scanner.nextInt();
             if (i > 0) {
-                if (arrayList.contains(i)) {
+                if (!(arrayList.contains(i))) {
+                    arrayList.add(i);
+                } else {
                     arrayList.remove(i);
                 }
-                arrayList.add(i);
             } else {
                 break;
             }
