@@ -45,7 +45,7 @@ public class Library {
         for (int i = 0; i < library.size(); i++) {
             System.out.print("\n" + (i + 1) + ") Author: " + library.get(i).getAuthor());
             System.out.print("\t\tTitle: " + library.get(i).getTitle());
-            System.out.print("\t\tNo of pages: " + library.get(i).getNoOfPages());
+            System.out.print("\t\tNo of pages: " + library.get(i).getNoOfPages()+"\n");
         }
     }
 }

@@ -26,7 +26,7 @@ public class Menu {
 
                 case 2:
                     System.out.println("Enter any part of name or title:");
-                    String empty = scanner.nextLine();
+                    scanner.nextLine();
 
                     Library.getInstance().search(scanner.nextLine());
                     showMainMenu();
@@ -71,7 +71,7 @@ public class Menu {
 
     private Edition createNewEdition(Scanner scanner, int editionType) {
 
-        String empty = scanner.nextLine();
+        scanner.nextLine();
 
         Edition localEdition = null;
 
